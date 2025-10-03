@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marie-kondo"
+version = "1.0.0"
+description = "Marie Kondo - Organize my Downloads folder"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "womanwhocodes"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Desktop Environment :: File Managers",
+    "Topic :: System :: Filesystems",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dynamic = ["dependencies"]
+keywords = ["downloads", "organizer", "file management", "automation"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"" = ["*.md", "*.txt"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+
+ [project.optional-dependencies]
+ dev = [
+     "black>=23.0.0",
+     "flake8>=6.0.0",
+     "mypy>=1.0.0",
+ ]
+
+[project.scripts]
+marie-kondo = "main:main"
+
+[project.urls]
+Repository = "https://github.com/womanwhocodes/marie-kondo"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = ["tests*", "docs*"]
+
+
+
+
+
+
